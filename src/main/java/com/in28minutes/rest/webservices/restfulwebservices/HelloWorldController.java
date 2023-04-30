@@ -14,7 +14,7 @@ public class HelloWorldController {
 	public String helloWorld() throws UnknownHostException {
 		InetAddress IP=InetAddress.getLocalHost();
 		System.out.println(IP.toString());
-		String response = "IP" + IP.toString();
+		String response = "IP : " + IP.toString();
 		return response;
 	}
 
