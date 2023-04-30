@@ -3,7 +3,7 @@ Resources:
   - TargetService:
       Type: AWS::ECS::Service
       Properties:
-        TaskDefinition: "<TASK_DeFINITION>"
+        TaskDefinition: <TASK_DeFINITION>
         LoadBalancerInfo:
           ContainerName: "helloworld-rest"
           ContainerPort: "80"
