@@ -1,4 +1,4 @@
-version: 0.0
+version: 1.0
 Resources:
   - TargetService:
       Type: AWS::ECS::Service
@@ -7,3 +7,4 @@ Resources:
         LoadBalancerInfo:
           ContainerName: "helloworld-rest"
           ContainerPort: 80
+        PlatformVersion: "LATEST"
