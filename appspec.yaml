@@ -1,10 +1,9 @@
-version: 1.0
+version: 0.0
 Resources:
   - TargetService:
       Type: AWS::ECS::Service
       Properties:
-        TaskDefinition: "arn:aws:ecs:us-east-1:459343727810:task-definition/spring-fargate-ci:latest"
+        TaskDefinition: <TASK_DEFINITION>
         LoadBalancerInfo:
           ContainerName: "helloworld-rest"
-          ContainerPort: "80"
-        PlatformVersion: "LATEST"
+          ContainerPort: 80
