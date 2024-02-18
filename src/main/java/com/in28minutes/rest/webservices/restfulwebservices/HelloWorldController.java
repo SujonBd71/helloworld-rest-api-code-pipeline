@@ -55,4 +55,16 @@ public class HelloWorldController {
 		return "OK";
 	}
 
+
+	
+	@RequestMapping(value = "/greeting", method = RequestMethod.GET , consumes = MediaType.ALL_VALUE, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+	@ResponseBody
+	public String greetingPostJson(@RequestBody  String raw) {
+		System.out.println("recieved below request");
+		System.out.println(raw);
+		System.out.println();
+		System.out.println("done");
+		return "OK";
+	}
+
 }
