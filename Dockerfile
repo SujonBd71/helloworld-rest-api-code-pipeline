@@ -1,8 +1,10 @@
-FROM openjdk:8-jdk-alpine
+FROM openjdk:11
 VOLUME /tmp
 EXPOSE 80
 ADD target/*.jar app.jar
 ENV JAVA_OPTS=""
-ENTRYPOINT [ "sh", "-c", "java $JAVA_OPTS -Djava.security.egd=file:/dev/./urandom -jar /app.jar" ]
 
-HEALTHCHECK CMD curl --fail http://localhost:8080/hello-world || exit 1 
+RUN apt-get update; \
+    apt-get install -y --no-install-recommends curl;
+
+ENTRYPOINT [ "sh", "-c", "java $JAVA_OPTS -Djava.security.egd=file:/dev/./urandom -jar /app.jar" ]
